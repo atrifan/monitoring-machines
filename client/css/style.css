@@ -1,0 +1,67 @@
+
+.button {
+	background: #04a1d0;
+	border-radius: 5px;
+	box-shadow: rgba(0,0,0,0.4) 5px 0px 10px 0px;
+	border: 1px solid #04A1D0;
+	-moz-border-radius: 5px;
+	color: white;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	border: 0px;
+	width: 70px;
+	cursor: pointer;
+	padding: 5px;
+}
+
+.button:hover {
+	background: #104d69;
+	opacity: 0.7;
+	filter: alpha(opacity=70);
+	-moz-opacity: 0.7;
+}
+
+.information_machine {
+	
+	overflow:hidden;
+	width: 600px;
+	height:auto;
+	margin-top: 20px;
+	padding-left: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	
+}
+
+.information_machine .button {
+	
+	float: right;
+	margin-right : 20px;
+	
+}
+
+.instaled_features {
+	
+	display: block;
+	width:600px;
+	height:auto;
+	min-height:120px;
+	margin-bottom: 20px;
+	
+}
+
+.server_sts {
+	
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	
+}
+
+.server_sts .logger {
+		display: block;
+		overflow: auto;
+		margin-left:0px;
+	}
+
+
