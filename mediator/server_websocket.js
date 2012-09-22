@@ -1,4 +1,6 @@
-
+/**
+ * The websocket server
+ */
 var http = require('http');
 var server = http.createServer();
 server.listen(8080);
@@ -106,7 +108,8 @@ function messageHandler(msg) {
    	    }
    	    break;
    	    
-   	default : 
+   	default :
+   	    console.log("recived message from: "+this.nickname);
    		break;
    }
    
