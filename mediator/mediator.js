@@ -58,7 +58,7 @@ function closeHandler() {
 
 /**
  * @description There are two possible scenarios 1. u recive a message from the web_client or from the gatherer
- * if u recive a message from the client the first one will set the nickname of the websocket
+ * if u receive a message from the client the first one will set the nickname of the websocket
  * @param msg
  * @returns
  */
