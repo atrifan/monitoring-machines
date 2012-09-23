@@ -10,12 +10,8 @@ function client(){
 
 client.prototype.setup = function() {
 	 this.webSocket = new WebSocket("ws://127.0.0.1:8080");
-	 var socket = io.connect('http://localhost:81');
-
-	 socket.on('connect', function () {
-	     write('ok');
-	 });
-
+	
+	 
 	 this.webSocket.addEventListener("open", function() { write("Connection established");}, false);
 	 this.webSocket.addEventListener("message", this.messageHandler, true);
 	 this.webSocket.addEventListener("close", function() { write("Connection lost");}, false);

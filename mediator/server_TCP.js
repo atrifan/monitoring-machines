@@ -19,6 +19,7 @@ net.createServer(function (socket) {
 
   // Handle incoming messages from clients.
   socket.on('data', function (data) {
+      console.log(data);
     broadcast(socket.name + "> " + data, socket);
   });
 

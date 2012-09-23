@@ -23,7 +23,26 @@ Public Class Form1
         ByVal e As System.EventArgs) Handles MyBase.Load
         msg("Client Started")
         clientSocket.Connect("127.0.0.1", 5000)
+
+        Dim serverStream As NetworkStream = clientSocket.GetStream()
         Label1.Text = "Client Socket Program - Server Connected ..."
+
+        Dim inStream(10024) As Byte
+
+
+
+
+        If serverStream.DataAvailable Then
+            serverStream.Read(inStream, 0, CInt(clientSocket.ReceiveBufferSize))
+            Dim returndata As String = _
+            System.Text.Encoding.ASCII.GetString(inStream)
+            msg("Data from Server : " + returndata)
+        End If
+
+
+
+
+
     End Sub
 
     Sub msg(ByVal mesg As String)
