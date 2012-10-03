@@ -1,6 +1,7 @@
+var tcp;
 TCP_client = function(){
     var net = require('net');
-    
+    this.temporary;
     var HOST = '127.0.0.1';
     var PORT = 5000;
     this.my_client;
@@ -11,7 +12,7 @@ TCP_client = function(){
         console.log('CONNECTED TO: ' + HOST + ':' + PORT);
         self.my_client= client;
         // Write a message to the socket as soon as the client is connected, the server will receive it as message from the client 
-        client.write('I am a TCP mediator!');
+        //client.write('I am a TCP mediator!');
     
     });
   
@@ -20,6 +21,7 @@ TCP_client = function(){
     // data is what the server sent to this socket
     client.on('data', function(data) {
         console.log('DATA: ' + data);
+        tcp_to_ws(data);
         // Close the client socket completely
         
     });
@@ -37,6 +39,7 @@ TCP_client = function(){
 
 webSocket_client = function(){
     var my_ws_connection;
+    var self=this;
     var lister= {
             "type" : "gatherer",
             "action" : "",
@@ -56,24 +59,31 @@ webSocket_client = function(){
     this.client.on('connect', connectionHandler_WS);
     
     function connectionHandler_WS(connection){
+        if (typeof(tcp) === 'undefined')
+            tcp = new TCP_client();
         console.log('WebSocket client connected');
         my_ws_connection = connection;
-        send("nickname", "gatherer_1.0");
+       
+        self.send("nickname", "gatherer_1.0");
         
         connection.on('error', function(error) {
             console.log("Connection Error: " + error.toString());
         });
         connection.on('close', closeHandler_WS);
         connection.on('message', messageHandler_WS);
+        
     
        
     };
     
-    function send(action, value, to){
+    this.send = function(action, value, to){
         lister.action = action;
+        console.log(value);
         lister.value = value;
         lister.to = to;
+        //console.log(my_ws_connection);
         my_ws_connection.send(JSON.stringify(lister));
+        
     };
     
     function closeHandler_WS(){
@@ -84,10 +94,10 @@ webSocket_client = function(){
         var data = msg.utf8Data.toString();
         var message = JSON.parse(data);
         switch (message.command) {
-            case "install_list" :
+            case "commands" :
                 //var toSend = listInstall(message.machine_name);
                 //send("programList", toSend, message.from);
-                ws_to_tcp(message.machine_name);
+                ws_to_tcp(message.machine_name,message.from);
                 console.log("Recived request for programs on machine : "+message.machine_name+" from client : "+message.from);
                 break;
         
@@ -98,10 +108,17 @@ webSocket_client = function(){
     this.client.connect('ws://localhost:8080/', 'echo-protocol');
 };
 
-function ws_to_tcp(msg){
-    tcp.my_client.write(msg);
+function ws_to_tcp(msg,from){
+    console.log(from);
+    tcp.my_client.write(msg+"\n\r");
+    tcp.temporary = from;
 }
-tcp = new TCP_client();
 
-wsc = new webSocket_client();
+function tcp_to_ws(msg){
+   wsc.send('printlog',msg.toString(),tcp.temporary);
+    
+}
+
+
+var wsc = new webSocket_client();
 

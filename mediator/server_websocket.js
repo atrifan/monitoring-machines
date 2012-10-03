@@ -79,7 +79,7 @@ function messageHandler(msg) {
    		emit(this.nickname, send_msg);
    		mesaj = {
    		        "from" : this.nickname,
-   		        "command" : "install_list",
+   		        "command" : "commands",
    		        "machine_name" : message.machine_name 
    		};
    		emit('gatherer_1.0', mesaj);
@@ -104,7 +104,20 @@ function messageHandler(msg) {
    	            emit(message.to, send_msg);
    	            break;
    	            
-   	        default : break;
+   	        case "printlog" : 
+   	            console.log(message.action);
+       	        console.log ('Recived some log from : ' + this.nickname);
+       	        console.log('The log from server is : ' + message.value)
+                send_msg = {
+                  "type" : "logger",
+                  "data" : "Server responded : "+message.value
+                };
+                console.log(message.to);
+                emit(message.to, send_msg);
+   	            break;
+   	            
+   	       default : 
+   	           break;
    	    }
    	    break;
    	    
