@@ -1,0 +1,28 @@
+<!DOCTYPE>
+<html>
+    <title> Your OS title here </title>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/os.css" media="screen"/>
+        <script src="ext/lib/require.js"></script>
+        <script src="ext/lib/jquery.js"></script>
+        <script>
+        require(['ext/config/UI.Icons.conf','ext/moduleControl/createIcon'],function (icons,iCreator){
+           console.log(icons);
+           for (var i in icons.workspace){
+                var creator = new iCreator(icons.workspace[i]);
+                creator._render();
+            }
+        });
+        </script>
+    </head>
+    <body>
+        <div class="wraper">
+            <div class = "screen">
+               <div class="workspace">
+               </div>
+               <div class="short_workspace">
+               </div>
+            </div>
+        </div>
+    </body>
+    </html>

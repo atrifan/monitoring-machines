@@ -1,0 +1,71 @@
+body {
+    overflow: hidden;
+    width:100%;
+    margin: 0px;
+}
+.wrapper {
+    width: 100%;
+    height: 100%;
+}
+.screen {
+    width:100%;
+    height:100%;
+    overflow: hidden;
+    /*background-image: url('yourpath/to/file.png');*/
+   background-color: #C1DAD6;
+}
+.screen .workspace {
+    position: absolute;
+    top: 0px;
+    bottom: 30px;
+    left: 0px;
+    right: 0px;
+    padding: 5px;
+    overflow: hidden;
+    min-height: 200px;
+}
+.screen .short_workspace {
+    overflow: hidden;
+    height: 20px;
+    position: absolute;
+    bottom: 0px;
+    left:0px;
+    right:0px;
+    padding: 5px;
+    background-color: #F3EfE0;
+}
+
+/**BIG ICONS **/
+.icon-wraper{
+    height: auto;
+    max-width: 70px;
+    overflow: hidden;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.icon-wraper.click{
+    background-color:#04A1D0;
+    opacity: 0.7;
+}
+.icon-wraper div {
+    text-align: center;
+    word-wrap: break-word;
+    font-family: Arial;
+    font-size: 12px;
+    margin-top: 5px;
+}
+.icon-big {
+    width: 32px;
+    height: 32px;
+    margin-left:auto;
+    margin-right:auto;
+}
+.terminal-icon {
+    background-image: url('../resources/icons/terminal-big.png');
+}
+.find-icon {
+    background-image: url('../resources/icons/find-big.png');
+}
+.folders-icon {
+    background-image: url('/home/atrifan/Downloads/storage-big.png');
+}
