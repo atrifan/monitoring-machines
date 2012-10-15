@@ -12,6 +12,10 @@ define(['ext/moduleControl/element'],function(el){
                         ],
                 id : obj.name+'-big',
                 value : obj.name,
+                event : {
+                        eventName : 'click',
+                        eventHandler : 'IconClickState'
+                }
         };
     }
     

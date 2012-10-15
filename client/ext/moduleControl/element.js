@@ -1,4 +1,4 @@
-define([], function(){
+define(['ext/config/handlers'], function(handlers){
 function Element(object) {
     this.cls = object.cls;
     this.id = object.id;
@@ -8,6 +8,7 @@ function Element(object) {
     this.nodes = object.items;
     this.inner = object.inner;
     this.event = object.event;
+    this.handler_lib = new handlers();
 };
 
 Element.prototype._generate = function () {
@@ -20,7 +21,8 @@ Element.prototype._generate = function () {
     $(element).html(this.inner);
     element.setAttribute('val', this.value);
     $(element).css(this.style);
-    $(element).on(this.event.eventName,this.event.eventHandler);
+    console.log(this.handler_lib[this.event.eventHandler]);
+    $(element).on(this.event.eventName,this.handler_lib[this.event.eventHandler]);
     var children = [];
     if(this.nodes.length !== 0)
         for (var i in this.nodes){
