@@ -11,8 +11,8 @@ body {
     width:100%;
     height:100%;
     overflow: hidden;
-    /*background-image: url('yourpath/to/file.png');*/
-   background-color: #C1DAD6;
+    /*background-image: url('../resources/wallpapers/wallpaper1.jpg');*/
+   /*background-color: #C1DAD6;*/
 }
 .screen .workspace {
     position: absolute;
