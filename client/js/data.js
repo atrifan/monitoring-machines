@@ -33,7 +33,7 @@ client.prototype.messageHandler = function (msg) {
 };
 
 var write = function (msg) {
-	$('.logger').val($('.logger').val()+"server: "+msg+"\r\n");
+	$('.logger').html($('.logger').html()+'<font color="red">server: '+msg+"</font><br/>");
 	
 };
 
