@@ -12,7 +12,7 @@ body {
     height:100%;
     overflow: hidden;
     /*background-image: url('../resources/wallpapers/wallpaper1.jpg');*/
-   /*background-color: #C1DAD6;*/
+   background-color: #C1DAD6;
 }
 .screen .workspace {
     position: absolute;
@@ -67,5 +67,8 @@ body {
     background-image: url('../resources/icons/find-big.png');
 }
 .folders-icon {
-    background-image: url('/home/atrifan/Downloads/storage-big.png');
+    background-image: url('../resources/icons/storage-big.png');
+}
+.enti-class {
+	background-image: url('../resources/icons/enti-big.png');
 }

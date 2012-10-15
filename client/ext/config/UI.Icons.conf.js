@@ -7,7 +7,9 @@ define([], function () {
                                         {name: 'Folders',
                                             cls: 'folders-icon'},
                                         {name: 'Find',
-                                                cls: 'find-icon'}
+                                                cls: 'find-icon'},
+                                        {name: 'Enti',
+                                                cls: 'enti-class'}
                                        ],
                     shortcut :[]
     };
