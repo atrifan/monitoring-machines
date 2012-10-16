@@ -7,11 +7,11 @@
         <script src="ext/lib/jquery.js"></script>
         <script>
         require(['ext/config/UI.Icons.conf','ext/moduleControl/createIcon'],function (icons,iCreator){
-           console.log(icons);
-           for (var i in icons.workspace){
-                var creator = new iCreator(icons.workspace[i]);
-                creator._render();
-            }
+           for(var j in icons)
+	           for (var i in icons[j]){
+	                var creator = new iCreator(icons[j][i],j);
+	                creator._render();
+	            }
         });
         </script>
     </head>

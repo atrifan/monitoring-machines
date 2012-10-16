@@ -36,6 +36,9 @@ Element.prototype._generate = function () {
 Element.prototype._appendToWorkspace = function (el) {
         $('.workspace').append(el);
 };
+Element.prototype._appendToToolbar = function (el) {
+    $('.short_workspace').append(el);
+};
 
 return Element;
 });

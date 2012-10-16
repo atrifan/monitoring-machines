@@ -61,14 +61,40 @@ body {
     margin-right:auto;
 }
 .terminal-icon {
-    background-image: url('../resources/icons/terminal-big.png');
+    background-image: url('../resources/icons/workspace/terminal-big.png');
 }
 .find-icon {
-    background-image: url('../resources/icons/find-big.png');
+    background-image: url('../resources/icons/workspace/find-big.png');
 }
 .folders-icon {
-    background-image: url('../resources/icons/storage-big.png');
+    background-image: url('../resources/icons/workspace/storage-big.png');
 }
 .enti-class {
-	background-image: url('../resources/icons/enti-big.png');
+	background-image: url('../resources/icons/workspace/enti-big.png');
 }
+/**BIG ICONS **/
+
+/**SMALL ICONS **/
+.icon-wraper-toolbar{
+	height:100%;
+	min-width: 20px;
+	max-width: 30px;
+	overflow: hidden;
+	float: left;
+	margin-left: 10px;
+}
+.icon-wraper-toolbar.click{
+	background-color:#04A1D0;
+    opacity: 0.7;
+}
+.icon-small {
+	width:16px;
+	height: 16px;
+	cursor: pointer;
+	margin: 2px auto 0px auto;
+}
+.terminal-icon-small {
+	background-image: url('../resources/icons/toolbar/terminal-small.png');
+};
+
+/**SMALL ICONS**/

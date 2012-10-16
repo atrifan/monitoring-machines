@@ -11,7 +11,8 @@ define([], function () {
                                         {name: 'Enti',
                                                 cls: 'enti-class'}
                                        ],
-                    shortcut :[]
+                    shortcut :[{name: 'Terminal',
+                        cls: 'terminal-icon-small'}]
     };
     return icons;
 });
