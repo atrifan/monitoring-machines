@@ -3,12 +3,17 @@ define(['ext/moduleControl/element'], function(el) {
         this.window = {
                    tag: 'div',
                    cls: 'window',
+                   id: obj.id,
+                   resizable: true,
+                   draggable: true,
                    items: []
         };
     }
-    createWindow.protype._render = function() {
+    createWindow.prototype._render = function() {
         var _elementGenerator = new el(this.window);
         var htmlElement = _elementGenerator._generate();
         _elementGenerator._appendToWorkspace(htmlElement);
     };
+    
+    return createWindow;
 });

@@ -5,6 +5,7 @@ define(['ext/moduleControl/element'],function(el){
             this.ic = {
                     tag : 'div',
                     cls : 'icon-wraper',
+                    draggable: true,
                     items : [{
                              tag: 'div',
                              cls: 'icon-big '+obj.cls,
