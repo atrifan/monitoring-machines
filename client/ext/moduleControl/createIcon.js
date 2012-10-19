@@ -35,7 +35,7 @@ define(['ext/moduleControl/element'],function(el){
                         eventHandler : 'IconClickState'
                 },
                 {eventName: 'click',
-                    eventHandler : 'createWindow'
+                    eventHandler : 'createWin'
                 }
                 ]
         };

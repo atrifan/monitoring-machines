@@ -1,4 +1,4 @@
-define(['../moduleControl/createWindow'], function(windowCreator){
+define(['ext/moduleControl/createWindow'], function(windowCreator){
     console.log(windowCreator);
     function handler(){};
     handler.prototype.IconClickState = function() {
@@ -10,10 +10,11 @@ define(['../moduleControl/createWindow'], function(windowCreator){
         else
             $(this).addClass('click');
     };
-    handler.prototype.createWindow = function() {
+    handler.prototype.createWin = function() {
         nameOfWindow = $(this).attr('val');
         windowObj = {id: nameOfWindow};
         var creator = new windowCreator(windowObj);
+        console.log(creator._render());
         creator._render();
     };
     return handler;

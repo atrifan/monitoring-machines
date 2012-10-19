@@ -8,7 +8,7 @@ define(['ext/moduleControl/element'], function(el) {
                    draggable: true,
                    items: []
         };
-    }
+    };
     createWindow.prototype._render = function() {
         var _elementGenerator = new el(this.window); //promises here
         var htmlElement = _elementGenerator._generate();
