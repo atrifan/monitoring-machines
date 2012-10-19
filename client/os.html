@@ -8,18 +8,13 @@
         <script src="ext/lib/jquery-ui-1.9.0.custom/js/jquery-1.8.2.js"></script>
         <script src="ext/lib/jquery-ui-1.9.0.custom/js/jquery-ui-1.9.0.custom.min.js"></script>
         <script>
-        require(['ext/config/UI.Icons.conf','ext/moduleControl/createIcon', 'ext/moduleControl/createWindow'],
+        require(['ext/config/UI.Icons.conf','ext/moduleControl/createIcon'],
         function (icons,iCreator,windowCreator){
            for(var j in icons)
 	           for (var i in icons[j]){
 	                var creator = new iCreator(icons[j][i],j);
 	                creator._render();
 	            }
-	       var windowObj = {
-	           id: 'terminal'
-	       };
-	       var creator = new windowCreator(windowObj);
-	       creator._render();
         });
         </script>
     </head>

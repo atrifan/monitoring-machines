@@ -24,8 +24,12 @@ Element.prototype._generate = function () {
     $(element).html(this.inner);
     element.setAttribute('val', this.value);
     $(element).css(this.style);
-    console.log(this.handler_lib[this.event.eventHandler]);
-    $(element).on(this.event.eventName,this.handler_lib[this.event.eventHandler]);
+    //console.log(this.handler_lib[this.event.eventHandler]);
+    if(this.event.length !== 0)
+        for (var i in this.event) {
+            $(element).on(this.event[i].eventName,this.handler_lib[this.event[i].eventHandler]);
+        }
+    
     var children = [];
     if(this.nodes.length !== 0)
         for (var i in this.nodes){

@@ -1,4 +1,5 @@
-define([], function(){
+define(['../moduleControl/createWindow'], function(windowCreator){
+    console.log(windowCreator);
     function handler(){};
     handler.prototype.IconClickState = function() {
         var elements = $('.icon-wraper');
@@ -8,6 +9,12 @@ define([], function(){
             $(this).removeClass('click');
         else
             $(this).addClass('click');
+    };
+    handler.prototype.createWindow = function() {
+        nameOfWindow = $(this).attr('val');
+        windowObj = {id: nameOfWindow};
+        var creator = new windowCreator(windowObj);
+        creator._render();
     };
     return handler;
 });

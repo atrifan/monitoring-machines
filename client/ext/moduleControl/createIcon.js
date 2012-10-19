@@ -15,10 +15,10 @@ define(['ext/moduleControl/element'],function(el){
                             ],
                     id : obj.name+'-big',
                     value : obj.name,
-                    event : {
+                    event : [{
                             eventName : 'click',
                             eventHandler : 'IconClickState'
-                    }
+                    }]
             };
         else if (where === "shortcut")
             this.ic = {
@@ -30,10 +30,14 @@ define(['ext/moduleControl/element'],function(el){
                         }],
                 id : obj.name+'-small',
                 value : obj.name,
-                event : {
+                event : [{
                         eventName : 'click',
                         eventHandler : 'IconClickState'
+                },
+                {eventName: 'click',
+                    eventHandler : 'createWindow'
                 }
+                ]
         };
     }
     
