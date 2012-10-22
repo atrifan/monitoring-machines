@@ -1,5 +1,5 @@
-define(['ext/moduleControl/element'],function(el){
-    function icon(obj, where){
+define([],function(){
+    function icon(obj, where, constructor){
         this.where = where;
         if (where === "workspace")
             this.ic = {
@@ -39,10 +39,11 @@ define(['ext/moduleControl/element'],function(el){
                 }
                 ]
         };
-    }
+        this.el = constructor;
+    };
     
     icon.prototype._render = function(where){
-        var _elementGenerator = new el(this.ic);
+        var _elementGenerator = new this.el(this.ic);
         var htmlElement = _elementGenerator._generate();
         if (this.where === "workspace")
             _elementGenerator._appendToWorkspace(htmlElement);

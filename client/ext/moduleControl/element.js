@@ -27,7 +27,7 @@ Element.prototype._generate = function () {
     //console.log(this.handler_lib[this.event.eventHandler]);
     if(this.event.length !== 0)
         for (var i in this.event) {
-            $(element).on(this.event[i].eventName,this.handler_lib[this.event[i].eventHandler]);
+            $(element).on(this.event[i].eventName, { constructor: Element }, this.handler_lib[this.event[i].eventHandler]);
         }
     
     var children = [];

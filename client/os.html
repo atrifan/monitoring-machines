@@ -11,13 +11,15 @@
         require({
             baseUrl: ''
         });
-        require(['ext/config/UI.Icons.conf','ext/moduleControl/createIcon'],
-        function (icons,iCreator,windowCreator){
+        require(['ext/config/UI.Icons.conf', 'ext/moduleControl/createIcon', 'ext/moduleControl/element'],
+        function (icons,iCreator, elCreator){
            
            for(var j in icons)
 	           for (var i in icons[j]){
-	                var creator = new iCreator(icons[j][i],j);
+	                //var elemCreator = new elCreator();
+	                var creator = new iCreator(icons[j][i],j,elCreator);
 	                creator._render();
+	                //var creator = elCreator._createIcon(icons[j][i],j);
 	            }
 	            
         });

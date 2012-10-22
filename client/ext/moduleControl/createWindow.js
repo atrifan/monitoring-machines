@@ -1,5 +1,5 @@
-define(['ext/moduleControl/element'], function(el) {
-    function createWindow(obj){
+define([], function() {
+    function createWindow(obj, constructor){
         this.window = {
                    tag: 'div',
                    cls: 'window',
@@ -8,9 +8,11 @@ define(['ext/moduleControl/element'], function(el) {
                    draggable: true,
                    items: []
         };
+        this.el = constructor;
     };
     createWindow.prototype._render = function() {
-        var _elementGenerator = new el(this.window); //promises here
+        console.log(this.el);
+        var _elementGenerator = new this.el(this.window); //promises here
         var htmlElement = _elementGenerator._generate();
         _elementGenerator._appendToWorkspace(htmlElement);
     };

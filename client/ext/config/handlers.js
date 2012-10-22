@@ -1,5 +1,4 @@
 define(['ext/moduleControl/createWindow'], function(windowCreator){
-    console.log(windowCreator);
     function handler(){};
     handler.prototype.IconClickState = function() {
         var elements = $('.icon-wraper');
@@ -10,12 +9,22 @@ define(['ext/moduleControl/createWindow'], function(windowCreator){
         else
             $(this).addClass('click');
     };
-    handler.prototype.createWin = function() {
+    handler.prototype.createWin = function(argument) {
+        console.log(argument.data.constructor);
         nameOfWindow = $(this).attr('val');
         windowObj = {id: nameOfWindow};
-        var creator = new windowCreator(windowObj);
-        console.log(creator._render());
-        creator._render();
+        object = {
+                data : {app: "x",
+                    app2: "y"}
+        };
+        for (i in object.data)
+            console.log(i,object.data[i]);
+        if($('#'+nameOfWindow).length === 0) {
+            var creator = new windowCreator(windowObj, argument.data.constructor);
+            console.log(creator);
+            creator._render();
+        }
+        
     };
     return handler;
 });
