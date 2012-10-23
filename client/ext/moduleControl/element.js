@@ -10,6 +10,7 @@ function Element(object) {
     this.draggable = object.draggable;
     this.event = object.event;
     this.resizable = object.resizable;
+    this.module = object.module;
     this.handler_lib = new handlers();
 };
 
@@ -23,11 +24,19 @@ Element.prototype._generate = function () {
     $(element).addClass(this.cls);
     $(element).html(this.inner);
     element.setAttribute('val', this.value);
+    $(element).attr('module', this.module);
+    //console.log(element);
     $(element).css(this.style);
     //console.log(this.handler_lib[this.event.eventHandler]);
     if(this.event.length !== 0)
         for (var i in this.event) {
-            $(element).on(this.event[i].eventName, { constructor: Element }, this.handler_lib[this.event[i].eventHandler]);
+            
+            if (this.event[i].eventHandler === 'createWin')
+                $(element).on(this.event[i].eventName, { constructor: Element }, this.handler_lib[this.event[i].eventHandler]);
+            else if(this.event[i].eventHandler === 'minimizeWin')
+                $(element).on(this.event[i].eventName, this.handler_lib[this.event[i].eventHandler]);
+            else 
+                $(element).on(this.event[i].eventName, this.handler_lib[this.event[i].eventHandler]);
         }
     
     var children = [];

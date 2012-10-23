@@ -5,6 +5,7 @@ define([],function(){
             this.ic = {
                     tag : 'div',
                     cls : 'icon-wraper',
+                    module: obj.module,
                     draggable: true,
                     items : [{
                              tag: 'div',
@@ -15,10 +16,7 @@ define([],function(){
                             ],
                     id : obj.name+'-big',
                     value : obj.name,
-                    event : [{
-                            eventName : 'click',
-                            eventHandler : 'IconClickState'
-                    }]
+                    event : obj.event
             };
         else if (where === "shortcut")
             this.ic = {
@@ -30,14 +28,8 @@ define([],function(){
                         }],
                 id : obj.name+'-small',
                 value : obj.name,
-                event : [{
-                        eventName : 'click',
-                        eventHandler : 'IconClickState'
-                },
-                {eventName: 'click',
-                    eventHandler : 'createWin'
-                }
-                ]
+                event : obj.event,
+                module: obj.module,
         };
         this.el = constructor;
     };
