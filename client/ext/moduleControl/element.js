@@ -2,6 +2,7 @@ define(['ext/config/handlers'], function(handlers){
 function Element(object) {
     this.cls = object.cls;
     this.id = object.id;
+    this.type = object.type;
     this.value = object.value;
     this.style= object.style;
     this.elTag = object.tag;
@@ -24,6 +25,7 @@ Element.prototype._generate = function () {
     $(element).addClass(this.cls);
     $(element).html(this.inner);
     element.setAttribute('val', this.value);
+    $(element).attr('type',this.type);
     $(element).attr('module', this.module);
     //console.log(element);
     $(element).css(this.style);

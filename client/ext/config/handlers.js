@@ -45,5 +45,14 @@ define(['ext/moduleControl/createWindow','ext/lib/promise'], function(windowCrea
             $($(this).parent().parent().parent()).css('visibility','visible');
     };
     
+    handler.prototype.sendMessage = function(e) {
+        if (e.keyCode === 13) {
+            myClient.info.machine_name = $(this).val();
+            $(this).val('');
+            console.log(myClient.info.id, " : ", myClient.info.machine_name);
+            myClient.webSocket.send(JSON.stringify(myClient.info));
+        }
+    };
+    
     return handler;
 });

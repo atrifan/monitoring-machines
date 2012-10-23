@@ -47,6 +47,7 @@ define(['ext/lib/promise'], function(promise) {
         };
         require(['ext/moduleControl/definedModules/'+obj.module], function(module){
             self.window.items.push(module);
+            console.log(module);
             //var modul = module;
             self.deferred.resolve(self);
             //console.log(self.window.items);
