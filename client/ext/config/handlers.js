@@ -19,7 +19,12 @@ define(['ext/moduleControl/createWindow','ext/lib/promise'], function(windowCrea
         if($('#'+nameOfWindow).length === 0) {
             var creator = new windowCreator(windowObj, argument.data.constructor).then(
                     function(builder){
-                       builder._render();
+                       element = builder._render();
+                       $(element).css({
+                           position: 'absolute',
+                           top: '100px',
+                           left: '200px'
+                       });
                     }        
             );
             console.log(creator);

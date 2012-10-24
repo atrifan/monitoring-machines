@@ -63,6 +63,7 @@ define(['ext/lib/promise'], function(promise) {
         var _elementGenerator = new this.el(this.window); //promises here
         var htmlElement = _elementGenerator._generate();
         _elementGenerator._appendToWorkspace(htmlElement);
+        return htmlElement;
     };
     return createWindow;
 });

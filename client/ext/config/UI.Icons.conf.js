@@ -22,7 +22,10 @@ define([], function () {
                                                 cls: 'find-icon',
                                                 event : [{eventName : 'click',
                                                     eventHandler : 'IconClickState'
-                                                }]},
+                                                },
+                                                {eventName: 'click',
+                                                    eventHandler: 'createWin'}],
+                                                    module: 'explorer'},
                                         {name: 'Enti',
                                                 cls: 'enti-class',
                                                 event : [{eventName : 'click',
