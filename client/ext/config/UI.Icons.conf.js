@@ -14,7 +14,10 @@ define([], function () {
                                             cls: 'folders-icon',
                                             event : [{eventName : 'click',
                                                 eventHandler : 'IconClickState'
-                                            }]},
+                                            },
+                                            {eventName: 'click',
+                                                eventHandler: 'createWin'}],
+                                                module: 'explorer'},
                                         {name: 'Find',
                                                 cls: 'find-icon',
                                                 event : [{eventName : 'click',

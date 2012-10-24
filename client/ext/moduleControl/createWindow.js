@@ -8,6 +8,9 @@ define(['ext/lib/promise'], function(promise) {
                    id: obj.id,
                    resizable: true,
                    draggable: true,
+                   event: [{eventName: 'mousedown',
+                       eventHandler: 'focusin'}
+                       ],
                    items: [{
                        tag: 'div',
                        cls: 'window-top',

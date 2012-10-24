@@ -54,5 +54,11 @@ define(['ext/moduleControl/createWindow','ext/lib/promise'], function(windowCrea
         }
     };
     
+    handler.prototype.focusin = function () {
+        console.log('focus');
+        $('.window').css('z-index','0');
+        $(this).css('z-index','1000');
+    }
+    
     return handler;
 });

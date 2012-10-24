@@ -115,6 +115,25 @@ body {
     padding-left: 5px;
 }
 
+.explorer-wrapper {
+    width:100%;
+    position:absolute;
+    top:25px;
+    bottom:0px;
+    overflow: hidden;
+    background: #fff;
+    -webkit-border-radius: 0px 0px 10px 10px;
+    -moz-border-radius: 0px 0px 10px 10px;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.explorer-left {
+    width:180px;
+    border-right: 1px groove ghostwhite;
+    height:100%;
+    overflow: auto;
+}
+
 .window-margins {
     height: 3px;
     background-color: #104D69;
