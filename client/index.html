@@ -3,6 +3,7 @@
 <head>
 <link rel="stylesheet" type="text/css" href="css/style.css" media="screen"/>
 <script src="js/jquery.js"></script>
+<script src="../mediator/node_modules/socket.io/socket.io.js"></script>
 <script src="js/data.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
@@ -24,7 +25,7 @@
 			
 			<div class="server_sts">
 				Server log:
-				<textarea id="response" class="logger" disabled cols="70" rows="20"></textarea>
+				<div id="response" class="logger" disabled cols="70" rows="20"></div>
 			</div>
 			
 			<div class="information_machine">
