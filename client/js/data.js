@@ -52,27 +52,3 @@ var append = function (msg) {
 var myClient = new client();
 myClient.setup();
 
-$(document).ready(function(){
-    $('.button.emit').on("mousedown",function(){
-        $(this).addClass('click');
-        myClient.info.machine_name = $('input[name="machine_name"]').val();
-        console.log(myClient.info.id, " : ", myClient.info.machine_name);
-        $('input[name="machine_name"]').val('');
-        myClient.webSocket.send(JSON.stringify(myClient.info));
-    });
-    $('.button.emit').on("mouseup",function(){
-        $(this).removeClass('click');
-    });
-	$('input[name="machine_name"]').keydown(function(e) {
-		if (e.keyCode == 13){
-			myClient.info.machine_name = $(this).val();
-			$(this).val('');
-			console.log(myClient.info.id, " : ", myClient.info.machine_name);
-			myClient.webSocket.send(JSON.stringify(myClient.info));
-		}
-	});
-});
-
-
-
-

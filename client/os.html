@@ -1,0 +1,39 @@
+<!DOCTYPE>
+<html>
+    <title> Your OS title here </title>
+    <head>
+        <link rel="stylesheet" type="text/css" href="ext/lib/jquery-ui-1.9.0.custom/css/ui-lightness/jquery-ui-1.9.0.custom.css" media="screen"/>
+        <link rel="stylesheet" type="text/css" href="css/os.css" media="screen"/>
+        <script src="ext/lib/require.js"></script>
+        <script src="ext/lib/jquery-ui-1.9.0.custom/js/jquery-1.8.2.js"></script>
+        <script src="ext/lib/jquery-ui-1.9.0.custom/js/jquery-ui-1.9.0.custom.min.js"></script>
+        <script src="js/data.js"></script>
+        <script>
+        require({
+            baseUrl: ''
+        });
+        require(['ext/config/UI.Icons.conf', 'ext/moduleControl/createIcon', 'ext/moduleControl/element'],
+        function (icons,iCreator, elCreator){
+           
+           for(var j in icons)
+	           for (var i in icons[j]){
+	                //var elemCreator = new elCreator();
+	                var creator = new iCreator(icons[j][i],j,elCreator);
+	                creator._render();
+	                //var creator = elCreator._createIcon(icons[j][i],j);
+	            }
+	            
+        });
+        </script>
+    </head>
+    <body>
+        <div class="wraper">
+            <div class = "screen">
+               <div class="workspace">
+               </div>
+               <div class="short_workspace">
+               </div>
+            </div>
+        </div>
+    </body>
+    </html>
