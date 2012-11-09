@@ -55,6 +55,8 @@ define(['ext/moduleControl/createWindow','ext/lib/promise'], function(windowCrea
             myClient.info.machine_name = $(this).val();
             $(this).val('');
             console.log(myClient.info.id, " : ", myClient.info.machine_name);
+            console.log(myClient.webSocket);
+            console.log(myClient.info);
             myClient.webSocket.send(JSON.stringify(myClient.info));
         }
     };

@@ -19,7 +19,7 @@ net.createServer(function (socket) {
   // Handle incoming messages from clients.
   socket.on('data', function (data) {
       console.log(data);
-    broadcast(socket.name + "> " + data, socket);
+    broadcast(data, socket);
   });
 
   // Remove the client from the list when it leaves
@@ -32,8 +32,8 @@ net.createServer(function (socket) {
   function broadcast(message, sender) {
     clients.forEach(function (client) {
       // Don't want to send it to sender
-      if (client === sender) return;
-      client.write(message);
+      if (client === sender) 
+          client.write(message);
     });
     // Log it to the server output too
     process.stdout.write(message);
