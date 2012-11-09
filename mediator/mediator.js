@@ -2,7 +2,7 @@ var tcp;
 TCP_client = function(){
     var net = require('net');
     this.temporary;
-    var HOST = '127.0.0.1';
+    var HOST = 'localhost';
     var PORT = 5000;
     this.my_client;
     var self=this;

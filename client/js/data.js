@@ -9,7 +9,7 @@ function client(){
 }
 
 client.prototype.setup = function() {
-	 this.webSocket = new WebSocket("ws://127.0.0.1:8080");
+	 this.webSocket = new WebSocket("ws://localhost:8080");
 	
 	 
 	 this.webSocket.addEventListener("open", function() { write("Connection established");}, false);
@@ -33,7 +33,8 @@ client.prototype.messageHandler = function (msg) {
 };
 
 var write = function (msg) {
-	$('.logger').html($('.logger').html()+'<font color="red">server: '+msg+"</font><br/>");
+    console.log(msg);
+	$('.terminal-display').html($('.terminal-display').html()+'<font color="red">server: '+msg+"</font><br/>");
 	
 };
 
